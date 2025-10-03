@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Design Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            color: #00ff00; /* Neon green text */
+            background-color: #000; /* Dark gaming background */
+            overflow-x: hidden;
+        }
+
+        /* Parallax sections */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .parallax::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Gaming+Hero+BG'); /* Replace with a gaming-themed BG image */
+            font-size: 2em;
+            color: #00ffff; /* Neon cyan */
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Glow effect */
+        }
+
+        .about {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Circuit+Board+BG'); /* Gaming circuit board BG */
+            min-height: 60vh;
+            padding: 50px;
+            color: #ff00ff; /* Neon magenta */
+        }
+
+        .portfolio {
+            background-color: #111; /* Dark section */
+            padding: 50px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00; /* Neon glow */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Hover zoom */
+        }
+
+        .contact {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Neon+City+BG'); /* Neon gaming city BG */
+            min-height: 60vh;
+            padding: 50px;
+            color: #ffff00; /* Neon yellow */
+        }
+
+        /* Cool gaming animations */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+
+        .hero h1 {
+            animation: glitch 1s infinite;
+        }
+
+        /* Particles for cool effect (using simple CSS) */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: #00ff00;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: float 10s infinite linear;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles for gaming starfield effect -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 7s;"></div>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <section class="parallax hero">
+        <h1>Parallax Design Portfolio</h1>
+    </section>
+
+    <!-- About Section -->
+    <section class="about parallax">
+        <h2>About Me</h2>
+        <p>I'm a passionate photographer and editor with a gaming twist. My designs blend epic visuals with pixel-perfect edits. Dive into my world of parallax adventures!</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2>My Photography & Edits</h2>
+        <div class="gallery">
+            <!-- Replace these placeholders with your actual image URLs once shared -->
+            <img src="https://via.placeholder.com/400x300?text=Design+1" alt="Photography/Edit 1">
+            <img src="https://via.placeholder.com/400x300?text=Design+2" alt="Photography/Edit 2">
+            <img src="https://via.placeholder.com/400x300?text=Design+3" alt="Photography/Edit 3">
+            <img src="https://via.placeholder.com/400x300?text=Design+4" alt="Photography/Edit 4">
+            <img src="https://via.placeholder.com/400x300?text=Design+5" alt="Photography/Edit 5">
+            <!-- Add more as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section with Parallax -->
+    <section class="contact parallax">
+        <h2>Contact Me</h2>
+        <p>Email: yourname@example.com</p>
+        <p>Level up your visuals – let's collaborate!</p>
+    </section>
+
+</body>
+</html>
